@@ -1,5 +1,7 @@
-namespace DIO.Series
 using System;
+using System.Collections.Generic;
+
+namespace DIO.Series
 {
     public class Series : EntidadeBase
 
@@ -13,6 +15,8 @@ using System;
         private string Descricao {get; set;}
 
         private int Ano {get ; set ;}
+
+        private bool Excluido {get; set;}
     
 
         //METODOS
@@ -23,6 +27,7 @@ using System;
             this.Titulo = titulo;
             this.Descricao = Descricao;
             this.Ano = ano;
+            this.Excluido = false;
 
         }
 
@@ -46,6 +51,9 @@ using System;
         internal int retornaId()
         {
             return this.Id;
+        }
+        public void Excluir(){
+            this.Excluido = true;
         }
     }
 }
